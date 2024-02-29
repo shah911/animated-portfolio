@@ -2,32 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.burger {
+  position: relative;
+  width: 50px;
+  height: 10px;
+  background: transparent;
+  cursor: pointer;
+  display: block;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.burger input {
+  display: none;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.burger span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: white;
+  border-radius: 4.5px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.burger span:nth-of-type(1) {
+  width: 100%;
+  top: 0px;
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(2) {
+  width: 50%;
+  top: 100%;
+  transform-origin: left center;
+  transform: translateY(-100%);
+}
+
+.burger input:checked ~ span:nth-of-type(1) {
+  width: 100%;
+  transform: rotate(45deg);
+  top: 0px;
+  left: 0px;
+}
+
+.burger input:checked ~ span:nth-of-type(2) {
+  width: 100%;
+  transform: rotate(-45deg);
+  top: 35px;
+  left: 0px;
+}
+
+.underline-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.underline-effect::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0.5px;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+.underline-effect:hover::after {
+  width: 100%;
 }
