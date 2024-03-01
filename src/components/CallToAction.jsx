@@ -39,8 +39,8 @@ function CallToAction() {
 
   return (
     <div className="h-[600px] 2xl:h-[768px] flex flex-col items-center justify-evenly relative">
-      <div className="h-[75%] w-[95%] md:w-[100%] flex flex-col items-center justify-center">
-        <div className="h-[75%] w-[70%] flex flex-col items-center justify-between">
+      <div className="h-[75%] w-[95%] lg:w-[100%] flex flex-col items-center justify-center">
+        <div className="h-[90%] md:h-[75%] w-[100%] lg:w-[70%] flex flex-col items-center justify-between">
           <div className="flex items-center justify-between w-[100%]">
             <div className="h-[100px] w-[100px] 2xl:h-[150px] 2xl:w-[150px] relative">
               <Image
@@ -56,7 +56,7 @@ function CallToAction() {
                 initial="initial"
                 whileInView="whileInView"
                 // viewport={{ once: true }}
-                className="leading-[100%]  font-[500] uppercase text-[38px] md:text-[84px] lg:text-[100px] 2xl:text-[125px]"
+                className="leading-[100%] tracking-tighter  font-[500] uppercase text-[10vw] md:text-[84px] lg:text-[100px] 2xl:text-[125px]"
               >
                 Get in Touch
               </motion.h1>
@@ -74,14 +74,14 @@ function CallToAction() {
               </MagneticEffect>
             </div>
           </div>
-          <div className="flex items-center justify-center lg:items-start lg:justify-start gap-6 w-[100%]">
+          <div className="flex flex-col md:flex-row items-center justify-center lg:items-start lg:justify-start gap-2 md:gap-6 w-[100%]">
             <MagneticEffect>
-              <div className="cursor-pointer rounded-[24px] py-2 px-4 flex items-center justify-center border border-black bg-black text-white transition duration-300 hover:text-black hover:bg-white">
+              <div className="cursor-pointer rounded-[24px] w-[90vw] md:w-auto py-2 px-4 flex items-center justify-center border border-black bg-black text-white transition duration-300 hover:text-black hover:bg-white">
                 info@johndoe.com
               </div>
             </MagneticEffect>
             <MagneticEffect>
-              <div className="cursor-pointer rounded-[24px] py-2 px-4 flex items-center justify-center border border-black bg-black text-white transition duration-300 hover:text-black hover:bg-white">
+              <div className="cursor-pointer rounded-[24px] w-[90vw] md:w-auto py-2 px-4 flex items-center justify-center border border-black bg-black text-white transition duration-300 hover:text-black hover:bg-white">
                 +123 456 789
               </div>
             </MagneticEffect>

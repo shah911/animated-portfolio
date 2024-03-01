@@ -152,8 +152,8 @@ function Contact() {
             </form>
           </div>
           <div className="flex-[1] h-[100%] w-[100%] flex flex-col gap-10 md:gap-0">
-            <div className="h-[20%] flex items-center gap-4">
-              <div className="h-[100px] w-[150px] md:w-[100px] relative">
+            <div className="h-[20%] w-[100%] flex flex-wrap items-center justify-center gap-4">
+              <div className="h-[100px] w-[100px] relative">
                 <Image
                   src="/pexels-stefan-stefancik-91227.jpg"
                   alt=""
@@ -161,7 +161,7 @@ function Contact() {
                   className="object-cover rounded-[50%]"
                 />
               </div>
-              <h1 className="font-[500] text-[32px] h-[30%] leading-[100%]  md:hidden">
+              <h1 className="font-[500] text-center text-[32px] h-[30%] leading-[100%]  md:hidden">
                 {"Let's start a project together"}
               </h1>
             </div>
