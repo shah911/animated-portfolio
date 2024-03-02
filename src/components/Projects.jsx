@@ -43,7 +43,7 @@ function Projects() {
           variants={heading}
           initial="initial"
           whileInView="whileInView"
-          className="text-[50px] md:text-[100px] capitalize font-[500]"
+          className="text-[13vw] md:text-[100px] capitalize font-[500]"
         >
           recent work
         </motion.h1>

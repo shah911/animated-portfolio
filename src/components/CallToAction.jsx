@@ -56,7 +56,7 @@ function CallToAction() {
                 initial="initial"
                 whileInView="whileInView"
                 // viewport={{ once: true }}
-                className="leading-[100%] tracking-tighter  font-[500] uppercase text-[10vw] md:text-[84px] lg:text-[100px] 2xl:text-[125px]"
+                className="leading-[100%] tracking-tighter  font-[500] uppercase text-[9vw] md:text-[84px] lg:text-[100px] 2xl:text-[125px]"
               >
                 Get in Touch
               </motion.h1>

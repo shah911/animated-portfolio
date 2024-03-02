@@ -21,7 +21,7 @@ function Hero() {
     }
     gsap.set(firstPhrase?.current, { xPercent: xPercent });
     gsap.set(secondPhrase?.current, { xPercent: xPercent });
-    xPercent += 0.35 * direction.current;
+    xPercent += 0.15 * direction.current;
     requestAnimationFrame(animate);
   };
 

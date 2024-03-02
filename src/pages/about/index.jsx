@@ -12,7 +12,7 @@ function About() {
         <Header home={false} />
         <div className="flex flex-col items-center justify-center pt-20">
           <div className="flex flex-col items-center justify-center gap-6 py-10">
-            <h1 className="w-[90%] lg:w-[60%] 2xl:w-[80%] mx-auto text-[64px] lg:text-[100px] font-[400] tracking-tighter leading-[100%]">
+            <h1 className="w-[90%] lg:w-[60%] 2xl:w-[80%] mx-auto text-[12vw] lg:text-[100px] font-[400] tracking-tighter leading-[100%]">
               Lorem ipsum dolor sit amet
             </h1>
             <hr className="w-[90%] lg:w-[60%] 2xl:w-[80%] mx-auto" />
