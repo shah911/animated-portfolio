@@ -65,7 +65,7 @@ function Menu() {
 
   return (
     <>
-      <div className="flex items-center justify-end gap-2 relative">
+      <div className="flex items-center justify-end gap-2">
         <label
           className="burger z-[14]"
           htmlFor="burger"
@@ -89,14 +89,14 @@ function Menu() {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="absolute z-[12] top-[-20px] right-[-5px] flex items-center justify-center h-[400px] w-[300px] bg-black rounded-[12px] border border-white"
+            className="absolute z-[12] md:top-[-20px] md:right-[-5px] flex items-center justify-center w-[100vw] h-[100vh] right-[-9.5px] top-[-35px] rounded-none md:h-[400px] md:w-[300px] bg-black md:rounded-[12px] border border-white"
           >
-            <div className="flex flex-col justify-center gap-6 w-[90%]">
+            <div className="flex flex-col items-center md:items-start justify-center gap-6 w-[90%]">
               {data.map((item, i) => (
                 <motion.div key={i} custom={i} variants={menuTitle}>
                   <Link
                     href={item.url}
-                    className="text-4xl capitalize font-[500] text-white"
+                    className="text-[15vw] md:text-4xl capitalize font-[500] text-white"
                   >
                     {item.title}
                   </Link>

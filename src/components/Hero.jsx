@@ -10,7 +10,7 @@ function Hero() {
   const secondPhrase = useRef(null);
   const slider = useRef(null);
   let xPercent = 0;
-  const direction = useRef(-1);
+  const direction = useRef(1);
 
   const animate = () => {
     if (xPercent <= -100) {
@@ -31,12 +31,12 @@ function Hero() {
     gsap.to(slider.current, {
       scrollTrigger: {
         trigger: document.documentElement,
-        scrub: 0.5,
+        scrub: 5,
         start: 0,
         end: window.innerHeight,
         onUpdate: (e) => (direction.current = e.direction * -1),
       },
-      x: "-100px",
+      // x: "-100px",
     });
 
     requestAnimationFrame(animate);
@@ -61,7 +61,7 @@ function Hero() {
         </div>
         <div
           ref={slider}
-          className="w-[100%] absolute top-[calc(80%-17.9vw)] flex items-center justify-center overflow-hidden whitespace-nowrap gap-0"
+          className="w-[100%] absolute top-[calc(80%-17.9vw)] flex items-center justify-center overflow-hidden whitespace-nowrap"
         >
           <h1
             ref={firstPhrase}

@@ -37,7 +37,7 @@ const heading = {
 function Projects() {
   const [modal, setModal] = useState({ active: false, index: 0 });
   return (
-    <div className="min-h-[768px] lg:h-[768px] 2xl:h-[900px] w-[90%] mx-auto flex flex-col items-center justify-evenly relative overflow-hidden">
+    <div className="min-h-[768px] lg:h-[768px] 2xl:h-[900px] w-[95vw] mx-auto flex flex-col items-center justify-evenly relative overflow-hidden">
       <div className="overflow-hidden pb-10">
         <motion.h1
           variants={heading}

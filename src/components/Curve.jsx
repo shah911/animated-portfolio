@@ -98,6 +98,7 @@ export default function Curve({ children }) {
       window.removeEventListener("resize", resize);
     };
   }, []);
+
   return (
     <div className="page curve">
       <div
@@ -109,9 +110,8 @@ export default function Curve({ children }) {
         className="absolute left-[50%] top-[40%] text-white text-[46px] z-[100] translate-x-[-50%] text-center"
         {...anim(text)}
       >
-        {routes[router.route]}
+        {routes.hasOwnProperty(router.route) ? routes[router.route] : 404}
       </motion.p>
-
       {dimensions.width > 0 && <SVG {...dimensions} />}
 
       {children}

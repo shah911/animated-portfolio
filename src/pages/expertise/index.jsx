@@ -26,15 +26,15 @@ function Expertise() {
     <Curve>
       <div>
         <Header home={false} />
-        <div className="min-h-[960px] lg:min-h-[600px] 2xl:h-[768px] flex flex-col items-center justify-evenly">
+        <div className="w-[95vw] mx-auto min-h-[960px] lg:min-h-[600px] 2xl:h-[768px] flex flex-col items-center justify-evenly">
           <h1 className="py-10 w-[75%] md:w-[60%] mx-auto text-[48px] lg:text-[75px] font-[400] tracking-tighter leading-[100%]">
             I can help you with...
           </h1>
-          <div className="flex flex-wrap items-center justify-evenly">
+          <div className="flex flex-wrap items-center justify-between">
             {data.map((item, i) => (
               <div
                 key={i}
-                className="flex flex-col items-center justify-evenly w-[400px] h-[300px] 2xl:w-[450px] 2xl:h-[400px]"
+                className="flex flex-col items-center justify-evenly w-[100%] md:w-[50%] lg:w-[33.3%] h-[300px] 2xl:h-[400px]"
               >
                 <div className="w-[100%] h-[30%] flex flex-col items-center justify-evenly">
                   <span className="w-[90%]">{item.no}</span>

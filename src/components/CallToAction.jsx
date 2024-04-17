@@ -56,7 +56,7 @@ function CallToAction() {
                 initial="initial"
                 whileInView="whileInView"
                 // viewport={{ once: true }}
-                className="leading-[100%] tracking-tighter  font-[500] uppercase text-[9vw] md:text-[84px] lg:text-[100px] 2xl:text-[125px]"
+                className="leading-[100%] tracking-tighter  font-[500] uppercase text-[9vw] md:text-[11vw] lg:text-[8.5vw]"
               >
                 Get in Touch
               </motion.h1>
@@ -88,27 +88,29 @@ function CallToAction() {
           </div>
         </div>
       </div>
-      <div className="h-[25%] w-[100%] flex items-center justify-center">
-        <div className="flex-[1] flex flex-col items-center justify-evenly h-[100%]">
+      <div className="h-[25%] w-[95vw] flex items-center justify-center">
+        <div className="flex-[1] flex flex-col justify-evenly h-[100%]">
           <h2 className="font-bold text-lg">Local Time</h2>
           {time}
         </div>
-        <div className="flex-[1] flex flex-col items-center justify-evenly h-[100%]">
-          <h2 className="font-bold text-lg">Socials</h2>
-          <div className="flex items-center justify-center gap-8">
-            <div className="w-fit">
-              <MagneticEffect>
-                <a href="#" className="underline-effect font-[500]">
-                  Twitter
-                </a>
-              </MagneticEffect>
-            </div>
-            <div className="w-fit">
-              <MagneticEffect>
-                <a href="#" className="underline-effect font-[500]">
-                  LinkedIn
-                </a>
-              </MagneticEffect>
+        <div className="flex-[1] flex flex-col items-end justify-evenly h-[100%]">
+          <div className="h-[100%] flex flex-col justify-evenly">
+            <h2 className="font-bold text-lg">Socials</h2>
+            <div className="flex items-center justify-center gap-8">
+              <div className="w-fit">
+                <MagneticEffect>
+                  <a href="#" className="underline-effect font-[500]">
+                    Twitter
+                  </a>
+                </MagneticEffect>
+              </div>
+              <div className="w-fit">
+                <MagneticEffect>
+                  <a href="#" className="underline-effect font-[500]">
+                    LinkedIn
+                  </a>
+                </MagneticEffect>
+              </div>
             </div>
           </div>
         </div>
