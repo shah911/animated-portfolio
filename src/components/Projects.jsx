@@ -23,30 +23,41 @@ const data = [
 ];
 
 const heading = {
-  initial: { x: "100%" },
-  whileInView: {
-    x: 0,
+  initial: { y: "100%" },
+  whileInView: (i) => ({
+    y: 0,
     transition: {
       type: "tween",
-      duration: 2,
+      duration: 0.75,
+      delay: i * 0.05,
       ease: [0, 0.55, 0.45, 1],
     },
-  },
+  }),
 };
 
 function Projects() {
   const [modal, setModal] = useState({ active: false, index: 0 });
   return (
     <div className="min-h-[768px] lg:h-[768px] 2xl:h-[900px] w-[95vw] mx-auto flex flex-col items-center justify-evenly relative overflow-hidden">
-      <div className="overflow-hidden pb-10">
-        <motion.h1
-          variants={heading}
-          initial="initial"
-          whileInView="whileInView"
-          className="text-[13vw] md:text-[100px] capitalize font-[500]"
-        >
-          recent work
-        </motion.h1>
+      <div className="pb-10">
+        <h1 className="overflow-hidden text-[12vw] capitalize font-[500]">
+          {"recent work".split("").map((char, i) =>
+            char === " " ? (
+              <span key={i}>&nbsp;</span>
+            ) : (
+              <motion.span
+                variants={heading}
+                initial="initial"
+                whileInView="whileInView"
+                key={i}
+                custom={i}
+                className="inline-flex whitespace-nowrap"
+              >
+                {char}
+              </motion.span>
+            )
+          )}
+        </h1>
       </div>
       <div className="flex flex-wrap items-center justify-center gap-4 h-[100%] w-[100%] lg:hidden">
         {data.map((item, i) => (
@@ -63,13 +74,22 @@ function Projects() {
               />
             </div>
             <span className="inline-flex overflow-hidden">
-              <motion.span
-                initial={{ y: "100%" }}
-                whileInView={{ y: 0, transition: { duration: 0.5 } }}
-                className="text-2xl font-[500] capitalize"
-              >
-                {item.title}
-              </motion.span>
+              {item.title.split("").map((char, i) =>
+                char === " " ? (
+                  <span key={i}>&nbsp;</span>
+                ) : (
+                  <motion.span
+                    variants={heading}
+                    initial="initial"
+                    whileInView="whileInView"
+                    key={i}
+                    custom={i}
+                    className="relative inline-flex whitespace-nowrap uppercase font-[500] 2xl:text-lg"
+                  >
+                    {char}
+                  </motion.span>
+                )
+              )}
             </span>
           </div>
         ))}

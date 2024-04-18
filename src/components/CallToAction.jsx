@@ -5,15 +5,16 @@ import MagneticEffect from "./MagneticEffect";
 import Image from "next/image";
 
 const heading = {
-  initial: { x: "100%" },
-  whileInView: {
-    x: 0,
+  initial: { y: "100%" },
+  whileInView: (i) => ({
+    y: 0,
     transition: {
       type: "tween",
-      duration: 2,
+      duration: 0.75,
+      delay: i * 0.05,
       ease: [0, 0.55, 0.45, 1],
     },
-  },
+  }),
 };
 
 function CallToAction() {
@@ -50,17 +51,24 @@ function CallToAction() {
                 className="object-cover rounded-[50%]"
               />
             </div>
-            <div className="z-10 overflow-hidden">
-              <motion.h1
-                variants={heading}
-                initial="initial"
-                whileInView="whileInView"
-                // viewport={{ once: true }}
-                className="leading-[100%] tracking-tighter  font-[500] uppercase text-[9vw] md:text-[11vw] lg:text-[8.5vw]"
-              >
-                Get in Touch
-              </motion.h1>
-            </div>
+            <h1 className="overflow-hidden z-10 leading-[100%] tracking-tighter  font-[500] uppercase text-[9vw] md:text-[11vw] lg:text-[8.5vw]">
+              {"Get in Touch".split("").map((char, i) =>
+                char === " " ? (
+                  <span key={i}>&nbsp;</span>
+                ) : (
+                  <motion.span
+                    variants={heading}
+                    initial="initial"
+                    whileInView="whileInView"
+                    key={i}
+                    custom={i}
+                    className="relative inline-flex whitespace-nowrap"
+                  >
+                    {char}
+                  </motion.span>
+                )
+              )}
+            </h1>
           </div>
           <div className="w-[100%] relative">
             <hr className="w-[100%] border-black" />
