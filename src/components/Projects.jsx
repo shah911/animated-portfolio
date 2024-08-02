@@ -69,6 +69,7 @@ function Projects() {
               <Image
                 src={item.src}
                 alt={item.title}
+                priority={true}
                 fill
                 className="object-cover"
               />
