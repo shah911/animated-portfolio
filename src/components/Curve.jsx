@@ -83,6 +83,10 @@ export default function Curve({ children }) {
   });
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     const resize = () => {
       setDimensions({
         width: window.innerWidth,

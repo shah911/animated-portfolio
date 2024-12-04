@@ -1,11 +1,19 @@
 import CallToAction from "@/components/CallToAction";
 import Curve from "@/components/Curve";
 import Header from "@/components/Header";
+import { useScroll, useTransform, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useRef } from "react";
 
 function About() {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ["-15%", "15%"]);
   return (
     <Curve>
       <div className="">
@@ -28,12 +36,18 @@ function About() {
               </Link>
             </div>
             <div className="flex-[3] relative h-[100%] w-[100%] overflow-hidden flex items-center justify-center">
-              <Image
-                src="/pexels-stefan-stefancik-91227.jpg"
-                alt=""
-                fill
-                className="object-cover"
-              />
+              <motion.div
+                ref={ref}
+                style={{ y }}
+                className="relative h-[125%] w-full"
+              >
+                <Image
+                  src="/pexels-stefan-stefancik-91227.jpg"
+                  alt="profile picture"
+                  fill
+                  className="object-cover"
+                />
+              </motion.div>
             </div>
           </div>
         </div>

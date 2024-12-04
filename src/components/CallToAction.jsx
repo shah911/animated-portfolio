@@ -39,7 +39,7 @@ function CallToAction() {
   }, []);
 
   return (
-    <div className="h-[600px] 2xl:h-[768px] flex flex-col items-center justify-evenly relative">
+    <div className="h-[600px] 2xl:h-[768px] flex flex-col items-center justify-evenly relative overflow-hidden">
       <div className="h-[75%] w-[95%] lg:w-[100%] flex flex-col items-center justify-center">
         <div className="h-[90%] md:h-[75%] w-[100%] lg:w-[70%] flex flex-col items-center justify-between">
           <div className="flex items-center justify-between w-[100%]">
