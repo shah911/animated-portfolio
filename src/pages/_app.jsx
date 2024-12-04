@@ -54,7 +54,7 @@ export default function App({ Component, pageProps, router }) {
     <div className={montserrat.className}>
       <LenisScroll />
       <AnimatePresence mode="wait">{isLoading && <Loader />}</AnimatePresence>
-      <AnimatePresence mode="wait" initial={false}>
+      <AnimatePresence mode="wait">
         <Component key={router.route} {...pageProps} />
       </AnimatePresence>
     </div>
