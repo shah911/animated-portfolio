@@ -44,19 +44,20 @@ export default function App({ Component, pageProps, router }) {
     };
   }, [router]);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-      window.scrollTo(0, 0);
-    }, 2000);
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setIsLoading(false);
+  //     window.scrollTo(0, 0);
+  //   }, 2000);
+  // }, []);
   return (
-    <div className={montserrat.className}>
-      <LenisScroll />
-      <AnimatePresence mode="wait">{isLoading && <Loader />}</AnimatePresence>
-      <AnimatePresence mode="wait">
-        <Component key={router.route} {...pageProps} />
-      </AnimatePresence>
-    </div>
+    <LenisScroll>
+      <div className={montserrat.className}>
+        {/* <AnimatePresence mode="wait">{isLoading && <Loader />}</AnimatePresence> */}
+        <AnimatePresence mode="wait">
+          <Component key={router.route} {...pageProps} />
+        </AnimatePresence>
+      </div>
+    </LenisScroll>
   );
 }
