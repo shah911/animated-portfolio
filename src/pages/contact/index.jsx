@@ -25,7 +25,12 @@ function Contact() {
   const onSubmit = (data) => {
     window.scrollTo(0, 0);
     emailjs
-      .send("service_n5x8q6d", "template_wyruggl", data, "PefCKytrFK7i89DkL")
+      .send(
+        process.env.NEXT_PUBLIC_SERVICE,
+        process.env.NEXT_PUBLIC_TEMPLATE,
+        data,
+        process.env.NEXT_PUBLIC_SEC
+      )
       .then(
         (res) => {
           //console.log("SUCCESS!", response.status, response.text);
@@ -37,7 +42,7 @@ function Contact() {
           }
         },
         (err) => {
-          //console.log("FAILED...", err);
+          // console.log("FAILED...", err);
           if (err) {
             setNotify(true);
             return setMsg(

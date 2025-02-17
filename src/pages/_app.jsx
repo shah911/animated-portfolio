@@ -1,7 +1,8 @@
-import LenisScroll from "@/components/LenisScroll";
+// import LenisScroll from "@/components/LenisScroll";
 import Loader from "@/components/Loader";
 import "@/styles/globals.css";
 import { AnimatePresence } from "framer-motion";
+import Lenis from "lenis";
 import { Montserrat } from "next/font/google";
 import { useEffect, useState } from "react";
 
@@ -24,6 +25,8 @@ const restoreScrollPosition = (url) => {
 
 export default function App({ Component, pageProps, router }) {
   const [isLoading, setIsLoading] = useState(true);
+  // const [lenisRef, setLenis] = useState(null);
+  // const [rafState, setRaf] = useState(null);
 
   useEffect(() => {
     if ("scrollRestoration" in history) {
@@ -44,20 +47,40 @@ export default function App({ Component, pageProps, router }) {
     };
   }, [router]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+      window.scrollTo(0, 0);
+    }, 2000);
+  }, []);
+
   // useEffect(() => {
-  //   setTimeout(() => {
-  //     setIsLoading(false);
-  //     window.scrollTo(0, 0);
-  //   }, 2000);
-  // }, []);
+  //   const scroller = new Lenis();
+  //   let rf;
+  //   function raf(time) {
+  //     scroller.raf(time);
+  //     requestAnimationFrame(raf);
+  //   }
+  //   rf = requestAnimationFrame(raf);
+  //   setRaf(rf);
+  //   setLenis(scroller);
+
+  //   return () => {
+  //     if (lenisRef) {
+  //       cancelAnimationFrame(rafState);
+  //       lenisRef.destroy();
+  //     }
+  //   };
+  // }, [lenisRef, rafState]);
+
   return (
-    <LenisScroll>
-      <div className={montserrat.className}>
-        {/* <AnimatePresence mode="wait">{isLoading && <Loader />}</AnimatePresence> */}
-        <AnimatePresence mode="wait">
-          <Component key={router.route} {...pageProps} />
-        </AnimatePresence>
-      </div>
-    </LenisScroll>
+    // <LenisScroll>
+    <div className={montserrat.className}>
+      <AnimatePresence mode="wait">{isLoading && <Loader />}</AnimatePresence>
+      <AnimatePresence mode="wait">
+        <Component key={router.route} {...pageProps} />
+      </AnimatePresence>
+    </div>
+    // </LenisScroll>
   );
 }
