@@ -25,6 +25,7 @@ const restoreScrollPosition = (url) => {
 
 export default function App({ Component, pageProps, router }) {
   const [isLoading, setIsLoading] = useState(true);
+  //
   // const [lenisRef, setLenis] = useState(null);
   // const [rafState, setRaf] = useState(null);
 
